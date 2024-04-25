@@ -8,7 +8,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score,confusion_matrix
 import pickle
 
-data = pd.read_csv("C:/7038/Flaskapp-docker/flaskapp/heart.csv")
+data = pd.read_csv("../flaskapp/heart.csv")
 
 x=data.iloc[:,0:-1]
 y=data.iloc[:,-1]
@@ -36,8 +36,8 @@ ypred=pipe.predict(x_test)
 print("predicted values",ypred)
 
 
-file_path = ("C:/7038/Flaskapp-docker/flaskapp/RFmodel.pkl")
-with open("C:/7038/Flaskapp-docker/flaskapp/RFmodel.pkl", 'wb') as file:
+file_path = ("../flaskapp/RFmodel.pkl")
+with open("../flaskapp/RFmodel.pkl", 'wb') as file:
     pickle.dump(pipe, file)
 
 print(f"The object has been pickled and saved to {file_path}")
