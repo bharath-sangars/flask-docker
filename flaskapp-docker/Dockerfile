@@ -1,14 +1,15 @@
-FROM ubuntu:22.04
-MAINTAINER sangarsbharath2001@gmail.com
+FROM python:3.8
 
-RUN apt-get update -y
-RUN apt-get install python3-pip -y
-RUN apt-get install gunicorn -y
+#Set working directory to app
+WORKDIR /usr/app
 
-COPY requirements.txt requirements.txt
-COPY flaskapp /opt/
+#Copy over files to app directory
+COPY ./requirements.txt ./
 
-RUN pip3 install -r requirements.txt
-WORKDIR /opt/
+#Install requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app", "--workers=5"]
+#Copy rest of files over to working directory
+COPY ./ ./
+
+CMD ["flask", "run", "--host", "0.0.0.0" ]
