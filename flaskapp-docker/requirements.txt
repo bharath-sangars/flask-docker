@@ -1,4 +1,7 @@
-Flask==2.3.3
-numpy==1.26.3
-pandas==2.2.0rc0
-scikit-learn==1.4.0rc1
+Flask
+numpy
+pandas
+scikit-learn
+requests
+joblib
+pickle
