@@ -3,7 +3,7 @@ FROM python:3.8
 #Set working directory to app
 WORKDIR /usr/app
 
-RUN apt-get install python3-pip -y
+RUN apt-get python --upgrade pip 
 RUN apt-get update -y
 
 #Copy over files to app directory
