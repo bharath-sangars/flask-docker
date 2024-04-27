@@ -6,7 +6,7 @@ import pickle
 app = Flask(__name__)
 
 # Load the iris dataset for demonstration purposes
-model = pickle.load(open("Flaskapp-docker/flaskapp/RFmodel.pkl", 'rb'))
+model = pickle.load(open("RFmodel.pkl", 'rb'))
 
 
 # Define a route for the home page
