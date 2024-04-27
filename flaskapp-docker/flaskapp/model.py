@@ -37,7 +37,7 @@ print("predicted values",ypred)
 
 
 file_path = ("Flaskapp-docker/flaskapp/RFmodel.pkl")
-with open("Flaskapp-docker/flaskapp/RFmodel.pkl", 'wb') as file:
+with open("RFmodel.pkl", 'wb') as file:
     pickle.dump(pipe, file)
 
 print(f"The object has been pickled and saved to {file_path}")
